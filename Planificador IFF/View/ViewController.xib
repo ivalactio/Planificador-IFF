@@ -1,0 +1,179 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="18122" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="18093"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="ViewController" customModule="Planificador_IFF" customModuleProvider="target">
+            <connections>
+                <outlet property="backButton" destination="BdH-h7-54X" id="WJv-Ta-0i9"/>
+                <outlet property="imageView" destination="X2V-R9-qOh" id="XS2-7t-hrx"/>
+                <outlet property="manualButton" destination="jEB-Bz-PQA" id="aZ5-LJ-LOI"/>
+                <outlet property="manualTextButton" destination="I8R-vr-2zt" id="Ddi-l5-9Ej"/>
+                <outlet property="rebootButton" destination="TX3-MP-odk" id="LcA-Hi-iKm"/>
+                <outlet property="recognizeButton" destination="h7V-rP-fcx" id="RH3-kN-By9"/>
+                <outlet property="recognizerButton" destination="h7V-rP-fcx" id="xyg-Yn-zby"/>
+                <outlet property="scheduleButton" destination="m2W-y0-FOn" id="Api-3A-kxt"/>
+                <outlet property="selectPhotoButton" destination="a14-Eh-WT4" id="8ly-CP-hDa"/>
+                <outlet property="sendButton" destination="aGs-zg-YXN" id="CCJ-td-3YO"/>
+                <outlet property="stackManual" destination="xRF-tl-Zhw" id="HsQ-pV-hdJ"/>
+                <outlet property="stackPhoto" destination="0Za-5f-UVQ" id="XSf-CJ-6Tp"/>
+                <outlet property="textDetected" destination="KYE-xO-rmQ" id="W6v-Jx-LPM"/>
+                <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
+            </connections>
+        </placeholder>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view clearsContextBeforeDrawing="NO" contentMode="scaleToFill" id="i5M-Pr-FkT" customClass="ViewController.swift" customModule="Planificador_IFF" customModuleProvider="target">
+            <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="horario_enero_tachado.png" adjustsImageSizeForAccessibilityContentSizeCategory="YES" translatesAutoresizingMaskIntoConstraints="NO" id="X2V-R9-qOh">
+                    <rect key="frame" x="20" y="118" width="374" height="300"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="300" id="ehN-bj-upK"/>
+                    </constraints>
+                </imageView>
+                <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillProportionally" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="Wx1-gW-YdJ">
+                    <rect key="frame" x="20" y="438" width="374" height="404"/>
+                    <subviews>
+                        <stackView hidden="YES" opaque="NO" contentMode="center" distribution="fillEqually" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="xRF-tl-Zhw" userLabel="Stack Manual">
+                            <rect key="frame" x="0.0" y="0.0" width="374" height="0.0"/>
+                            <subviews>
+                                <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="1" borderStyle="roundedRect" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="I8R-vr-2zt">
+                                    <rect key="frame" x="0.0" y="0.0" width="182" height="0.0"/>
+                                    <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                    <textInputTraits key="textInputTraits" autocorrectionType="yes" textContentType="postal-code"/>
+                                    <connections>
+                                        <action selector="endEdit:" destination="-1" eventType="editingDidEndOnExit" id="AWZ-fV-Weu"/>
+                                    </connections>
+                                </textField>
+                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="aGs-zg-YXN">
+                                    <rect key="frame" x="192" y="0.0" width="182" height="0.0"/>
+                                    <color key="backgroundColor" red="0.14566552639999999" green="0.41035225990000002" blue="0.76675373319999995" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                    <fontDescription key="fontDescription" type="system" weight="heavy" pointSize="16"/>
+                                    <state key="normal" title="Enviar">
+                                        <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                    </state>
+                                    <connections>
+                                        <action selector="sendAction:" destination="-1" eventType="touchUpInside" id="M4R-2E-pSl"/>
+                                    </connections>
+                                </button>
+                            </subviews>
+                        </stackView>
+                        <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" spacing="9" translatesAutoresizingMaskIntoConstraints="NO" id="0Za-5f-UVQ" userLabel="Stack Photo">
+                            <rect key="frame" x="0.0" y="0.0" width="374" height="111"/>
+                            <subviews>
+                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" adjustsImageSizeForAccessibilityContentSizeCategory="YES" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="h7V-rP-fcx">
+                                    <rect key="frame" x="0.0" y="0.0" width="182.5" height="111"/>
+                                    <color key="backgroundColor" red="0.14566552639999999" green="0.41035225990000002" blue="0.76675373319999995" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                    <fontDescription key="fontDescription" type="system" weight="heavy" pointSize="18"/>
+                                    <state key="normal" title="Reconocer Horario">
+                                        <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                    </state>
+                                    <connections>
+                                        <action selector="recognizeButtonAction:" destination="-1" eventType="touchUpInside" id="N4R-xW-BgU"/>
+                                    </connections>
+                                </button>
+                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="a14-Eh-WT4">
+                                    <rect key="frame" x="191.5" y="0.0" width="182.5" height="111"/>
+                                    <color key="backgroundColor" red="0.14566552639999999" green="0.41035225990000002" blue="0.76675373319999995" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                    <fontDescription key="fontDescription" type="system" weight="heavy" pointSize="16"/>
+                                    <state key="normal" title="Elegir Foto">
+                                        <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                    </state>
+                                    <connections>
+                                        <action selector="selectButtonAction:" destination="-1" eventType="touchUpInside" id="Qdt-cc-tLV"/>
+                                    </connections>
+                                </button>
+                            </subviews>
+                        </stackView>
+                        <stackView opaque="NO" contentMode="scaleToFill" distribution="fillProportionally" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="i0t-qa-Lzg">
+                            <rect key="frame" x="0.0" y="121" width="374" height="117"/>
+                            <subviews>
+                                <button opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="249" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="jEB-Bz-PQA">
+                                    <rect key="frame" x="0.0" y="0.0" width="271.5" height="117"/>
+                                    <color key="backgroundColor" red="0.14566552639999999" green="0.41035225990000002" blue="0.76675373319999995" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                    <fontDescription key="fontDescription" type="boldSystem" pointSize="20"/>
+                                    <state key="normal" title="Elegir fecha manualmente">
+                                        <color key="titleColor" red="0.96067279579999998" green="0.96085661649999998" blue="0.9606590867" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                    </state>
+                                    <connections>
+                                        <action selector="manualAction:" destination="-1" eventType="touchUpInside" id="4J5-Gl-nqD"/>
+                                    </connections>
+                                </button>
+                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="TX3-MP-odk">
+                                    <rect key="frame" x="281.5" y="0.0" width="92.5" height="117"/>
+                                    <color key="backgroundColor" red="0.14566552639999999" green="0.41035225990000002" blue="0.76675373319999995" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                    <fontDescription key="fontDescription" type="boldSystem" pointSize="20"/>
+                                    <state key="normal" title="Reiniciar">
+                                        <color key="titleColor" red="0.96067279579999998" green="0.96085661649999998" blue="0.9606590867" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                    </state>
+                                    <connections>
+                                        <action selector="reiniciarAction:" destination="-1" eventType="touchUpInside" id="7EM-B0-EXx"/>
+                                    </connections>
+                                </button>
+                            </subviews>
+                        </stackView>
+                        <stackView opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="240" verticalHuggingPriority="240" distribution="fillEqually" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="Jsb-eN-NS4">
+                            <rect key="frame" x="0.0" y="248" width="374" height="156"/>
+                            <subviews>
+                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" adjustsImageSizeForAccessibilityContentSizeCategory="YES" lineBreakMode="middleTruncation" pointerInteraction="YES" translatesAutoresizingMaskIntoConstraints="NO" id="BdH-h7-54X">
+                                    <rect key="frame" x="0.0" y="0.0" width="182" height="156"/>
+                                    <color key="backgroundColor" red="0.14566552639999999" green="0.41035225990000002" blue="0.76675373319999995" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                    <fontDescription key="fontDescription" type="boldSystem" pointSize="18"/>
+                                    <state key="normal" title="Back">
+                                        <color key="titleColor" red="0.96067279579999998" green="0.96085661649999998" blue="0.9606590867" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                    </state>
+                                    <connections>
+                                        <action selector="backAction:" destination="-1" eventType="touchUpInside" id="lVU-bj-YC8"/>
+                                    </connections>
+                                </button>
+                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="m2W-y0-FOn">
+                                    <rect key="frame" x="192" y="0.0" width="182" height="156"/>
+                                    <color key="backgroundColor" red="0.14566552639999999" green="0.41035225990000002" blue="0.76675373319999995" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                    <fontDescription key="fontDescription" type="boldSystem" pointSize="18"/>
+                                    <state key="normal" title="Establecer Horario">
+                                        <color key="titleColor" red="0.96067279579999998" green="0.96085661649999998" blue="0.9606590867" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                    </state>
+                                    <connections>
+                                        <action selector="scheduleAction:" destination="-1" eventType="touchUpInside" id="ZVS-Dn-Y2M"/>
+                                    </connections>
+                                </button>
+                            </subviews>
+                        </stackView>
+                    </subviews>
+                </stackView>
+                <textField opaque="NO" contentMode="center" enabled="NO" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Aquí se indicará el dia de inicio" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="KYE-xO-rmQ" userLabel="textDetected">
+                    <rect key="frame" x="20" y="64" width="374" height="34"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="34" id="GDa-je-0Xm"/>
+                    </constraints>
+                    <fontDescription key="fontDescription" type="system" pointSize="12"/>
+                    <textInputTraits key="textInputTraits"/>
+                </textField>
+            </subviews>
+            <viewLayoutGuide key="safeArea" id="fnl-2z-Ty3"/>
+            <color key="backgroundColor" red="0.185141474" green="0.54103398319999996" blue="0.81897962089999998" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+            <constraints>
+                <constraint firstItem="KYE-xO-rmQ" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" constant="20" id="3Py-NY-B02"/>
+                <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="KYE-xO-rmQ" secondAttribute="trailing" constant="20" id="5hY-tG-ctk"/>
+                <constraint firstItem="X2V-R9-qOh" firstAttribute="top" secondItem="i5M-Pr-FkT" secondAttribute="top" constant="118" id="9x9-3I-wBa"/>
+                <constraint firstItem="X2V-R9-qOh" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" constant="20" id="H6a-Q3-H1X"/>
+                <constraint firstItem="X2V-R9-qOh" firstAttribute="leading" secondItem="Wx1-gW-YdJ" secondAttribute="leading" id="KYn-XB-YjZ"/>
+                <constraint firstItem="X2V-R9-qOh" firstAttribute="top" secondItem="KYE-xO-rmQ" secondAttribute="bottom" constant="20" id="Vef-xQ-mFt"/>
+                <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="X2V-R9-qOh" secondAttribute="trailing" constant="20" id="aCb-pZ-t2P"/>
+                <constraint firstItem="Wx1-gW-YdJ" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" constant="20" id="fN9-V7-FiY"/>
+                <constraint firstItem="fnl-2z-Ty3" firstAttribute="bottom" secondItem="Wx1-gW-YdJ" secondAttribute="bottom" constant="20" id="i8B-Ry-iF7"/>
+                <constraint firstItem="Wx1-gW-YdJ" firstAttribute="top" secondItem="X2V-R9-qOh" secondAttribute="bottom" constant="20" id="tf5-sj-Gki"/>
+                <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="Wx1-gW-YdJ" secondAttribute="trailing" constant="20" id="u5k-QE-sF7"/>
+            </constraints>
+            <point key="canvasLocation" x="131.8840579710145" y="115.84821428571428"/>
+        </view>
+    </objects>
+    <resources>
+        <image name="horario_enero_tachado.png" width="830" height="1661"/>
+    </resources>
+</document>

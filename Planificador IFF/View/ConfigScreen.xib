@@ -1,0 +1,139 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="18122" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina5_9" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="18093"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="ConfigScreen" customModule="Planificador_IFF" customModuleProvider="target">
+            <connections>
+                <outlet property="backButton" destination="sUS-Cq-CsG" id="tXF-0L-PWC"/>
+                <outlet property="minutesButton" destination="pUB-da-gcX" id="Fhm-2f-6eD"/>
+                <outlet property="minutesText" destination="3YS-7Q-gaV" id="67f-FG-EdL"/>
+                <outlet property="modifyButton" destination="jIU-Ki-eg1" id="Mgw-y3-xYD"/>
+                <outlet property="sendButton" destination="qNo-LM-Qe8" id="kr8-Of-iYc"/>
+                <outlet property="sendMinutesButton" destination="ja4-RN-HP6" id="xzT-Rt-AmH"/>
+                <outlet property="text" destination="dTb-3K-ifi" id="tSo-cD-FVG"/>
+                <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
+            </connections>
+        </placeholder>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view clearsContextBeforeDrawing="NO" contentMode="scaleToFill" id="i5M-Pr-FkT" customClass="ConfigScreen.swift" customModule="Planificador_IFF" customModuleProvider="target">
+            <rect key="frame" x="0.0" y="0.0" width="375" height="812"/>
+            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="iff_oficial_logo.png" id="LwO-qE-zJT">
+                    <rect key="frame" x="20" y="105" width="374" height="200"/>
+                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                </imageView>
+                <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillProportionally" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="dWz-VO-ss4">
+                    <rect key="frame" x="20" y="344" width="335" height="414"/>
+                    <subviews>
+                        <stackView opaque="NO" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" distribution="fillEqually" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="wv2-kJ-yf4" userLabel="Stack Manual">
+                            <rect key="frame" x="0.0" y="0.0" width="335" height="149.66666666666666"/>
+                            <subviews>
+                                <textField hidden="YES" opaque="NO" contentMode="scaleAspectFill" semanticContentAttribute="spatial" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="center" adjustsFontSizeToFit="NO" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="dTb-3K-ifi">
+                                    <rect key="frame" x="0.0" y="8" width="0.0" height="133.66666666666666"/>
+                                    <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                    <textInputTraits key="textInputTraits" autocorrectionType="yes" textContentType="postal-code"/>
+                                    <connections>
+                                        <action selector="endEdit:" destination="-1" eventType="editingDidEndOnExit" id="FTU-Gp-Ezh"/>
+                                    </connections>
+                                </textField>
+                                <button hidden="YES" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="qNo-LM-Qe8">
+                                    <rect key="frame" x="0.0" y="8" width="0.0" height="133.66666666666666"/>
+                                    <color key="backgroundColor" red="0.14566552639999999" green="0.41035225990000002" blue="0.76675373319999995" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                    <fontDescription key="fontDescription" type="system" weight="heavy" pointSize="16"/>
+                                    <state key="normal" title="Enviar">
+                                        <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                    </state>
+                                    <connections>
+                                        <action selector="sendAction:" destination="-1" eventType="touchUpInside" id="9a7-Qz-VAN"/>
+                                    </connections>
+                                </button>
+                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="jIU-Ki-eg1">
+                                    <rect key="frame" x="8" y="8" width="319" height="133.66666666666666"/>
+                                    <color key="backgroundColor" red="0.14566552639999999" green="0.41035225990000002" blue="0.76675373319999995" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                    <fontDescription key="fontDescription" type="boldSystem" pointSize="20"/>
+                                    <color key="tintColor" red="0.14566552639999999" green="0.41035225990000002" blue="0.76675373319999995" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                    <state key="normal" title="Modificar Horario">
+                                        <color key="titleColor" red="0.96067279579999998" green="0.96085661649999998" blue="0.9606590867" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                    </state>
+                                    <connections>
+                                        <action selector="modifyAction:" destination="-1" eventType="touchUpInside" id="M7c-cN-2gR"/>
+                                    </connections>
+                                </button>
+                            </subviews>
+                            <edgeInsets key="layoutMargins" top="8" left="8" bottom="8" right="8"/>
+                        </stackView>
+                        <stackView opaque="NO" contentMode="scaleToFill" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="D6h-43-Mbd">
+                            <rect key="frame" x="0.0" y="159.66666666666669" width="335" height="103.33333333333331"/>
+                            <subviews>
+                                <textField hidden="YES" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="3YS-7Q-gaV">
+                                    <rect key="frame" x="0.0" y="0.0" width="0.0" height="103.33333333333333"/>
+                                    <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                    <textInputTraits key="textInputTraits"/>
+                                    <connections>
+                                        <action selector="endEdit2:" destination="-1" eventType="editingDidEndOnExit" id="HEb-q7-3LT"/>
+                                    </connections>
+                                </textField>
+                                <button hidden="YES" opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ja4-RN-HP6">
+                                    <rect key="frame" x="0.0" y="0.0" width="0.0" height="103.33333333333333"/>
+                                    <color key="backgroundColor" red="0.14566552639999999" green="0.41035225990000002" blue="0.76675373319999995" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                    <fontDescription key="fontDescription" type="boldSystem" pointSize="20"/>
+                                    <state key="normal" title="Enviar">
+                                        <color key="titleColor" red="0.96067279579999998" green="0.96085661649999998" blue="0.9606590867" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                    </state>
+                                    <connections>
+                                        <action selector="sendMinutesAction:" destination="-1" eventType="touchUpInside" id="Qjl-gs-az6"/>
+                                    </connections>
+                                </button>
+                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="pUB-da-gcX">
+                                    <rect key="frame" x="0.0" y="0.0" width="335" height="103.33333333333333"/>
+                                    <color key="backgroundColor" red="0.14566552639999999" green="0.41035225990000002" blue="0.76675373319999995" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                    <fontDescription key="fontDescription" type="boldSystem" pointSize="20"/>
+                                    <state key="normal" title="Cambiar minutos de antelación">
+                                        <color key="titleColor" red="0.96067279579999998" green="0.96085661649999998" blue="0.9606590867" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                    </state>
+                                    <connections>
+                                        <action selector="minutesAction:" destination="-1" eventType="touchUpInside" id="U22-56-Tz9"/>
+                                    </connections>
+                                </button>
+                            </subviews>
+                        </stackView>
+                        <stackView opaque="NO" contentMode="center" distribution="fillEqually" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="nPz-1f-ZtI">
+                            <rect key="frame" x="0.0" y="273" width="335" height="141"/>
+                            <subviews>
+                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="sUS-Cq-CsG">
+                                    <rect key="frame" x="0.0" y="0.0" width="335" height="141"/>
+                                    <color key="backgroundColor" red="0.14566552639999999" green="0.41035225990000002" blue="0.76675373319999995" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                    <fontDescription key="fontDescription" type="boldSystem" pointSize="20"/>
+                                    <state key="normal" title="Back">
+                                        <color key="titleColor" red="0.96067279579999998" green="0.96085661649999998" blue="0.9606590867" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                    </state>
+                                    <connections>
+                                        <action selector="backAction:" destination="-1" eventType="touchUpInside" id="8Mi-q7-wDw"/>
+                                    </connections>
+                                </button>
+                            </subviews>
+                        </stackView>
+                    </subviews>
+                </stackView>
+            </subviews>
+            <viewLayoutGuide key="safeArea" id="fnl-2z-Ty3"/>
+            <color key="backgroundColor" red="0.0" green="0.49888449909999999" blue="0.78121739629999998" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+            <constraints>
+                <constraint firstItem="dWz-VO-ss4" firstAttribute="top" secondItem="fnl-2z-Ty3" secondAttribute="top" constant="300" id="6Rf-B8-7UN"/>
+                <constraint firstItem="fnl-2z-Ty3" firstAttribute="bottom" secondItem="dWz-VO-ss4" secondAttribute="bottom" constant="20" id="AKm-K6-lLn"/>
+                <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="dWz-VO-ss4" secondAttribute="trailing" constant="20" id="KTr-dA-Ugv"/>
+                <constraint firstItem="dWz-VO-ss4" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" constant="20" id="y4U-vs-vy3"/>
+            </constraints>
+            <point key="canvasLocation" x="131.8840579710145" y="79.6875"/>
+        </view>
+    </objects>
+    <resources>
+        <image name="iff_oficial_logo.png" width="200" height="200"/>
+    </resources>
+</document>
